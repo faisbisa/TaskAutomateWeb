@@ -1,48 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220625 16:53:40.956" rpa="false" schemaversion="3">
-<suite id="s1" name="Homepage" source="C:\Users\admin\Documents\QA Engineer\TugasLima\Homepage.robot">
-<test id="s1-t1" name="User want to verify homepage" line="11">
-<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
-<arg>${Homepage_URL}</arg>
-<arg>${Browser_type}</arg>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220628 23:09:21.921" rpa="false" schemaversion="3">
+<suite id="s1" name="ContactUs" source="C:\Users\admin\Documents\QA Engineer\TugasLima\Steps\ContactUs.robot">
+<kw name="Open Browser Using Chrome" library="contactUs_keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220625 16:53:41.281" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20220625 16:53:41.281" endtime="20220625 16:54:11.762"/>
+<msg timestamp="20220628 23:09:22.238" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220628 23:09:22.238" endtime="20220628 23:09:24.882"/>
 </kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220628 23:09:24.882" endtime="20220628 23:09:25.117"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:22.237" endtime="20220628 23:09:25.117"/>
+</kw>
+<test id="s1-t1" name="I'm verify homepage of My Store" line="7">
+<kw name="Open Homepage My Store" library="contactUs_keyword">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/index.php</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220628 23:09:25.121" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220628 23:09:25.121" endtime="20220628 23:09:33.378"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:25.120" endtime="20220628 23:09:33.378"/>
+</kw>
+<kw name="I'm validate logo" library="contactUs_keyword">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>//*[@class="logo img-responsive"]</arg>
+<arg>${Logo}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20220625 16:54:11.799" level="INFO">Element '//*[@class="logo img-responsive"]' is displayed.</msg>
-<status status="PASS" starttime="20220625 16:54:11.763" endtime="20220625 16:54:11.799"/>
+<msg timestamp="20220628 23:09:33.419" level="INFO">Element '//*[@class="logo img-responsive"]' is displayed.</msg>
+<status status="PASS" starttime="20220628 23:09:33.381" endtime="20220628 23:09:33.419"/>
 </kw>
+<status status="PASS" starttime="20220628 23:09:33.380" endtime="20220628 23:09:33.419"/>
+</kw>
+<kw name="I'm validate login" library="contactUs_keyword">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>//*[@class="login"]</arg>
+<arg>${Login}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20220625 16:54:11.825" level="INFO">Element '//*[@class="login"]' is displayed.</msg>
-<status status="PASS" starttime="20220625 16:54:11.799" endtime="20220625 16:54:11.825"/>
+<msg timestamp="20220628 23:09:33.455" level="INFO">Element '//*[@class="login"]' is displayed.</msg>
+<status status="PASS" starttime="20220628 23:09:33.421" endtime="20220628 23:09:33.455"/>
 </kw>
+<status status="PASS" starttime="20220628 23:09:33.420" endtime="20220628 23:09:33.455"/>
+</kw>
+<kw name="I'm validate Contact Us" library="contactUs_keyword">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>//*[@id="contact-link"]</arg>
+<arg>${Contact_Us}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20220625 16:54:11.847" level="INFO">Element '//*[@id="contact-link"]' is displayed.</msg>
-<status status="PASS" starttime="20220625 16:54:11.826" endtime="20220625 16:54:11.847"/>
+<msg timestamp="20220628 23:09:33.483" level="INFO">Element '//*[@id="contact-link"]' is displayed.</msg>
+<status status="PASS" starttime="20220628 23:09:33.457" endtime="20220628 23:09:33.483"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220625 16:54:11.848" endtime="20220625 16:54:14.221"/>
+<status status="PASS" starttime="20220628 23:09:33.456" endtime="20220628 23:09:33.483"/>
 </kw>
-<status status="PASS" starttime="20220625 16:53:41.280" endtime="20220625 16:54:14.222"/>
+<status status="PASS" starttime="20220628 23:09:25.118" endtime="20220628 23:09:33.483"/>
 </test>
-<status status="PASS" starttime="20220625 16:53:40.959" endtime="20220625 16:54:14.224"/>
+<test id="s1-t2" name="I'm to Contact Us" line="13">
+<kw name="I'm click button Contact Us" library="contactUs_keyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_contactUs}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220628 23:09:33.486" level="INFO">Clicking element '//*[@id="contact-link"]'.</msg>
+<status status="PASS" starttime="20220628 23:09:33.486" endtime="20220628 23:09:38.282"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:33.486" endtime="20220628 23:09:38.283"/>
+</kw>
+<kw name="I'm validate contact us1" library="contactUs_keyword">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${validate_contact}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220628 23:09:38.309" level="INFO">Element '//*[@class="page-subheading"]' is displayed.</msg>
+<status status="PASS" starttime="20220628 23:09:38.285" endtime="20220628 23:09:38.309"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:38.285" endtime="20220628 23:09:38.309"/>
+</kw>
+<kw name="I'm click contain Choose Subject" library="contactUs_keyword">
+<kw name="Page Should Contain List" library="SeleniumLibrary">
+<arg>${choose_contact}</arg>
+<doc>Verifies selection list ``locator`` is found from current page.</doc>
+<msg timestamp="20220628 23:09:38.330" level="INFO">Current page contains list '//*[@name="id_contact"]'.</msg>
+<status status="PASS" starttime="20220628 23:09:38.311" endtime="20220628 23:09:38.330"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:38.310" endtime="20220628 23:09:38.330"/>
+</kw>
+<kw name="I'm choose Subject" library="contactUs_keyword">
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${choose_contact}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20220628 23:09:38.331" level="INFO">Selecting options from selection list '//*[@name="id_contact"]' by index 2.</msg>
+<status status="PASS" starttime="20220628 23:09:38.330" endtime="20220628 23:09:38.436"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:38.330" endtime="20220628 23:09:38.436"/>
+</kw>
+<kw name="I'm Input email" library="contactUs_keyword">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_regis}</arg>
+<arg>rahmandaarya@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220628 23:09:38.438" level="INFO">Typing text 'rahmandaarya@gmail.com' into text field '//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20220628 23:09:38.438" endtime="20220628 23:09:38.550"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:38.437" endtime="20220628 23:09:38.550"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220628 23:09:43.561" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220628 23:09:38.551" endtime="20220628 23:09:43.562"/>
+</kw>
+<kw name="I'm input message" library="contactUs_keyword">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputMessage}</arg>
+<arg>I'm cant order</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220628 23:09:43.566" level="INFO">Typing text 'I'm cant order' into text field '//*[@id="message"]'.</msg>
+<status status="PASS" starttime="20220628 23:09:43.565" endtime="20220628 23:09:43.663"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:43.564" endtime="20220628 23:09:43.663"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220628 23:09:46.677" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220628 23:09:43.664" endtime="20220628 23:09:46.677"/>
+</kw>
+<kw name="I'm click send" library="contactUs_keyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submitContactUs}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220628 23:09:46.679" level="INFO">Clicking element '//*[@id="submitMessage"]'.</msg>
+<status status="PASS" starttime="20220628 23:09:46.679" endtime="20220628 23:09:49.326"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:46.678" endtime="20220628 23:09:49.326"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220628 23:09:52.338" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220628 23:09:49.327" endtime="20220628 23:09:52.338"/>
+</kw>
+<kw name="I'm validate submit contact us" library="contactUs_keyword">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${validateSubmit}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220628 23:09:52.376" level="INFO">Element '//*[@class="navigation_page"]' is displayed.</msg>
+<status status="PASS" starttime="20220628 23:09:52.340" endtime="20220628 23:09:52.376"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:52.339" endtime="20220628 23:09:52.376"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220628 23:09:55.390" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220628 23:09:52.377" endtime="20220628 23:09:55.391"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:33.485" endtime="20220628 23:09:55.391"/>
+</test>
+<kw name="I'm Close Browser" library="contactUs_keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220628 23:09:55.396" endtime="20220628 23:09:57.628"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:55.395" endtime="20220628 23:09:57.629"/>
+</kw>
+<status status="PASS" starttime="20220628 23:09:21.923" endtime="20220628 23:09:57.629"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Homepage">Homepage</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="ContactUs">ContactUs</stat>
 </suite>
 </statistics>
 <errors>
